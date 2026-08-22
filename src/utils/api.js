@@ -21,7 +21,7 @@ export async function fetchCountries() {
   }
 
   try {
-    // We use ?limit=10 for testing. We can increase this to 250 later.
+    // Using limit=10 for testing. We'll increase this to 250 later.
     const response = await fetch(`${API_BASE_URL}?limit=10`, {
       headers: {
         Authorization: `Bearer ${apiKey}`,
@@ -30,17 +30,28 @@ export async function fetchCountries() {
 
     if (!response.ok) {
       throw new Error(
-        `🛑 Failed to fetch countries: ${response.status} ${response.statusText}`,
+        `Failed to fetch countries: ${response.status} ${response.statusText}`,
       );
     }
 
-    const data = await response.json();
+    const responseData = await response.json();
 
-    return data.map((country) => ({
-      id: country.cca3,
-      name: country.name.common,
-      flag: country.flags.svg,
-    }));
+    // The countries are inside data.objects
+    const countries = responseData.data.objects;
+
+    if (!Array.isArray(countries)) {
+      console.error('❌ Unexpected response structure:', responseData);
+      throw new Error('API response did not contain an array of countries');
+    }
+
+    // Transform the data: filter out countries without flags, then map to clean format
+    return countries
+      .filter((country) => country.flag && country.flag.url_svg)
+      .map((country) => ({
+        id: country.codes.alpha_3 || country.uuid,
+        name: country.names.common,
+        flag: country.flag.url_svg,
+      }));
   } catch (error) {
     console.error('Error fetching countries:', error);
     throw error;
