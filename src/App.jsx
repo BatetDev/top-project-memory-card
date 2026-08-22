@@ -5,7 +5,6 @@ import { fetchCountries } from './utils/api';
 
 function App() {
   useEffect(() => {
-    // This is a temporary test to verify our API call works.
     async function testFetch() {
       try {
         console.log('🔄 Fetching countries...');
@@ -21,7 +20,7 @@ function App() {
     }
 
     testFetch();
-  }, []); // Empty dependency array = runs once when the component mounts.
+  }, []);
 
   return (
     <div>

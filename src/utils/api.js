@@ -1,7 +1,3 @@
-// src/utils/api.js
-
-const API_BASE_URL = 'https://api.restcountries.com/countries/v5';
-
 /**
  * Fetches countries from the v5 REST Countries API and transforms them
  * into a clean format with only the fields we need for our game.
@@ -11,6 +7,9 @@ const API_BASE_URL = 'https://api.restcountries.com/countries/v5';
  *          A promise that resolves to an array of country objects.
  * @throws {Error} Throws an error if the network request fails or the response is not OK.
  */
+
+const API_BASE_URL = 'https://api.restcountries.com/countries/v5';
+
 export async function fetchCountries() {
   const apiKey = import.meta.env.VITE_RESTCOUNTRIES_API_KEY;
 
