@@ -34,8 +34,6 @@ export async function fetchCountries() {
     }
 
     const responseData = await response.json();
-
-    // The countries are inside data.objects
     const countries = responseData.data.objects;
 
     if (!Array.isArray(countries)) {
@@ -43,14 +41,16 @@ export async function fetchCountries() {
       throw new Error('API response did not contain an array of countries');
     }
 
-    // Transform the data: filter out countries without flags, then map to clean format
-    return countries
-      .filter((country) => country.flag && country.flag.url_svg)
-      .map((country) => ({
-        id: country.codes.alpha_3 || country.uuid,
-        name: country.names.common,
-        flag: country.flag.url_svg,
-      }));
+    return (
+      countries
+        // Filter out countries without a flag
+        .filter((country) => country.flag && country.flag.url_svg)
+        .map((country) => ({
+          id: country.codes.alpha_3 || country.uuid,
+          name: country.names.common,
+          flag: country.flag.url_svg,
+        }))
+    );
   } catch (error) {
     console.error('Error fetching countries:', error);
     throw error;
