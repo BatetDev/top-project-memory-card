@@ -24,7 +24,7 @@ export async function fetchCountries() {
     // Fetch page 1 (offset defaults to 0)
     console.log('📦 Fetching page 1...');
     const response1 = await fetch(
-      `${API_BASE_URL}?limit=${limit}&independentOnly=true&response_fields=codes.alpha_3,names.common,flag.url_svg`,
+      `${API_BASE_URL}?limit=${limit}&classification.un_member=true&response_fields=codes.alpha_3,names.common,flag.url_svg`,
       {
         headers: {
           Authorization: `Bearer ${apiKey}`,
@@ -43,7 +43,7 @@ export async function fetchCountries() {
     // Fetch page 2 (offset=100)
     console.log('📦 Fetching page 2...');
     const response2 = await fetch(
-      `${API_BASE_URL}?limit=${limit}&offset=${limit}&unMembersOnly=true&response_fields=codes.alpha_3,names.common,flag.url_svg`,
+      `${API_BASE_URL}?limit=${limit}&offset=${limit}&classification.un_member=true&response_fields=codes.alpha_3,names.common,flag.url_svg`,
       {
         headers: {
           Authorization: `Bearer ${apiKey}`,
