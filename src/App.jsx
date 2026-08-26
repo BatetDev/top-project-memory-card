@@ -3,6 +3,7 @@
 import useCardManager from './hooks/useCardManager';
 import ScoreBoard from './components/ScoreBoard';
 import Card from './components/Card';
+import GameOverModal from './components/GameOverModal';
 
 function App() {
   const {
@@ -60,17 +61,12 @@ function App() {
         ))}
       </div>
 
-      <div className='mt-4 p-4 bg-gray-50 rounded-lg'>
-        <p className='text-sm text-gray-600'>
-          <strong>Status:</strong> {isLoading ? '⏳ Loading...' : '✅ Ready'}
-        </p>
-        <p className='text-sm text-gray-600'>
-          <strong>Cards on Board:</strong> {currentCards.length}
-        </p>
-        <p className='text-sm text-gray-600'>
-          <strong>Game Over:</strong> {isGameOver ? '✅ Yes' : '❌ No'}
-        </p>
-      </div>
+      {/* Game Over Modal */}
+      <GameOverModal
+        isOpen={isGameOver}
+        finalScore={currentScore}
+        onPlayAgain={resetGame}
+      />
     </div>
   );
 }
