@@ -25,7 +25,7 @@ export default function Card({ country, onClick, isGameOver, isLoading }) {
   return (
     <div
       className={`
-        border-2 border-gray-300 rounded-lg p-4 text-center bg-white
+        border-2 border-gray-300 rounded-lg p-2.5 text-center bg-white
         transition-all duration-200
         ${isDisabled ? 'opacity-70 cursor-default' : 'cursor-pointer hover:scale-105 hover:shadow-lg'}
       `}
@@ -34,7 +34,7 @@ export default function Card({ country, onClick, isGameOver, isLoading }) {
       <img
         src={flag}
         alt={`Flag of ${name}`}
-        className='w-full max-h-[120px] object-cover rounded mb-2'
+        className='w-full max-h-[120px] min-w-0 object-cover rounded mb-2'
       />
       <p className='m-0 text-sm font-medium'>{name}</p>
     </div>
