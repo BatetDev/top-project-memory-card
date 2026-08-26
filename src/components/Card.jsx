@@ -25,18 +25,18 @@ export default function Card({ country, onClick, isGameOver, isLoading }) {
   return (
     <div
       className={`
-        border-2 border-gray-300 rounded-lg p-2.5 text-center bg-white
-        transition-all duration-200
-        ${isDisabled ? 'opacity-70 cursor-default' : 'cursor-pointer hover:scale-105 hover:shadow-lg'}
+        border-2 border-gray-300 rounded-lg p-2.5 text-center bg-white transition-all duration-200 ${isDisabled ? 'opacity-70 cursor-default' : 'cursor-pointer hover:scale-105 hover:shadow-lg'}
       `}
       onClick={handleClick}
     >
-      <img
-        src={flag}
-        alt={`Flag of ${name}`}
-        className='w-full max-h-[120px] min-w-0 object-cover rounded mb-2'
-      />
-      <p className='m-0 text-sm font-medium'>{name}</p>
+      <div className='w-full aspect-[3/2] mb-0 overflow-hidden flex items-center justify-center'>
+        <img
+          src={flag}
+          alt={`Flag of ${name}`}
+          className='w-full h-full object-contain'
+        />
+      </div>
+      <p className='p-1 text-sm font-medium line-clamp-2 h-10'>{name}</p>
     </div>
   );
 }
