@@ -32,8 +32,8 @@ function App() {
   if (isLoading) {
     return (
       <div className='max-w-4xl mx-auto p-4 text-center'>
-        <h1 className='text-2xl font-bold mb-4'>
-          Memory Card Game: Countries Edition
+        <h1 className='text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-6'>
+          Countries Memory Card Game
         </h1>
         <p className='text-gray-600'>Loading countries...</p>
       </div>
@@ -43,7 +43,7 @@ function App() {
   return (
     <div className='max-w-4xl mx-auto p-4'>
       <h1 className='text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-6'>
-        Memory Card Game: Countries Edition
+        Countries Memory Card Game
       </h1>
 
       <ScoreBoard currentScore={currentScore} bestScore={bestScore} />
