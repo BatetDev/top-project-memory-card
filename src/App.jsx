@@ -1,74 +1,63 @@
-// src/utils/api.js
+// src/App.jsx
 
-const API_BASE_URL = 'https://api.restcountries.com/countries/v5';
+import useCardManager from './hooks/useCardManager';
 
-/**
- * Fetches all UN member states from the v5 API using pagination.
- * Combines both pages into a single array.
- *
- * @returns {Promise<Array<{id: string, name: string, flag: string}>>}
- */
-export async function fetchCountries() {
-  const apiKey = import.meta.env.VITE_RESTCOUNTRIES_API_KEY;
+function App() {
+  const {
+    currentCards,
+    currentScore,
+    bestScore,
+    isGameOver,
+    isLoading,
+    handleCardClick,
+    resetGame,
+  } = useCardManager();
 
-  if (!apiKey) {
-    console.warn(
-      '⚠️ API key not found. Please add VITE_RESTCOUNTRIES_API_KEY to your .env file.',
-    );
-  }
+  // Log state to console for testing
+  console.log('🃏 Current Cards:', currentCards);
+  console.log('📊 Current Score:', currentScore);
+  console.log('🏆 Best Score:', bestScore);
+  console.log('💀 Game Over:', isGameOver);
+  console.log('⏳ Loading:', isLoading);
 
-  try {
-    const limit = 100;
-    const allCountries = [];
+  // Expose functions to window for manual testing
+  window.handleCardClick = handleCardClick;
+  window.resetGame = resetGame;
+  window.currentCards = currentCards;
 
-    // Fetch page 1 (offset defaults to 0)
-    console.log('📦 Fetching page 1...');
-    const response1 = await fetch(
-      `${API_BASE_URL}?limit=${limit}&unMembersOnly=true&response_fields=codes.alpha_3,names.common,flag.url_svg`,
-      {
-        headers: {
-          Authorization: `Bearer ${apiKey}`,
-        },
-      },
-    );
-
-    if (!response1.ok) {
-      throw new Error(`Failed to fetch page 1: ${response1.status}`);
-    }
-
-    const data1 = await response1.json();
-    allCountries.push(...data1.data.objects);
-    console.log(`📦 Page 1 fetched: ${data1.data.objects.length} countries`);
-
-    // Fetch page 2 (offset=100)
-    console.log('📦 Fetching page 2...');
-    const response2 = await fetch(
-      `${API_BASE_URL}?limit=${limit}&offset=${limit}&unMembersOnly=true&response_fields=codes.alpha_3,names.common,flag.url_svg`,
-      {
-        headers: {
-          Authorization: `Bearer ${apiKey}`,
-        },
-      },
-    );
-
-    if (!response2.ok) {
-      throw new Error(`Failed to fetch page 2: ${response2.status}`);
-    }
-
-    const data2 = await response2.json();
-    allCountries.push(...data2.data.objects);
-    console.log(`📦 Page 2 fetched: ${data2.data.objects.length} countries`);
-
-    console.log(`✅ Total countries fetched: ${allCountries.length}`);
-
-    // Transform data
-    return allCountries.map((country) => ({
-      id: country.codes.alpha_3 || country.uuid,
-      name: country.names.common,
-      flag: country.flag.url_svg,
-    }));
-  } catch (error) {
-    console.error('Error fetching countries:', error);
-    throw error;
-  }
+  return (
+    <div>
+      <h1>Memory Card Game</h1>
+      <p>Open the browser console (F12) to test the game logic.</p>
+      <p>
+        Use <code>handleCardClick('id')</code> to simulate clicks.
+      </p>
+      <p>
+        Use <code>resetGame()</code> to reset the game.
+      </p>
+      <hr />
+      <div>
+        <p>
+          <strong>Current Score:</strong> {currentScore}
+        </p>
+        <p>
+          <strong>Best Score:</strong> {bestScore}
+        </p>
+        <p>
+          <strong>Game Over:</strong> {isGameOver ? '✅ Yes' : '❌ No'}
+        </p>
+        <p>
+          <strong>Loading:</strong> {isLoading ? '⏳ Loading...' : '✅ Done'}
+        </p>
+        <p>
+          <strong>Cards on Board:</strong> {currentCards.length}
+        </p>
+        <p>
+          <strong>Card IDs:</strong> {currentCards.map((c) => c.id).join(', ')}
+        </p>
+      </div>
+    </div>
+  );
 }
+
+export default App; // <-- Make sure this line exists!
