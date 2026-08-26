@@ -15,11 +15,28 @@ export default function Card({ country, onClick, isGameOver, isLoading }) {
   const { id, name, flag } = country;
 
   const handleClick = () => {
-    // Only allow clicks if game is not over and not loading
     if (!isGameOver && !isLoading) {
       onClick(id);
     }
   };
 
-  return <div></div>;
+  const isDisabled = isGameOver || isLoading;
+
+  return (
+    <div
+      className={`
+        border-2 border-gray-300 rounded-lg p-4 text-center bg-white
+        transition-all duration-200
+        ${isDisabled ? 'opacity-70 cursor-default' : 'cursor-pointer hover:scale-105 hover:shadow-lg'}
+      `}
+      onClick={handleClick}
+    >
+      <img
+        src={flag}
+        alt={`Flag of ${name}`}
+        className='w-full max-h-[120px] object-cover rounded mb-2'
+      />
+      <p className='m-0 text-sm font-medium'>{name}</p>
+    </div>
+  );
 }
