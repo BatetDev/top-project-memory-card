@@ -2,6 +2,7 @@
 
 import useCardManager from './hooks/useCardManager';
 import ScoreBoard from './components/ScoreBoard';
+import Card from './components/Card';
 
 function App() {
   const {
@@ -26,6 +27,18 @@ function App() {
   window.resetGame = resetGame;
   window.currentCards = currentCards;
 
+  // Show loading state
+  if (isLoading) {
+    return (
+      <div className='max-w-4xl mx-auto p-4 text-center'>
+        <h1 className='text-2xl font-bold mb-4'>
+          Memory Card Game: Countries Edition
+        </h1>
+        <p className='text-gray-600'>Loading countries...</p>
+      </div>
+    );
+  }
+
   return (
     <div className='max-w-4xl mx-auto p-4'>
       <h1 className='text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-6'>
@@ -33,6 +46,19 @@ function App() {
       </h1>
 
       <ScoreBoard currentScore={currentScore} bestScore={bestScore} />
+
+      {/* Card Grid */}
+      <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4'>
+        {currentCards.map((country) => (
+          <Card
+            key={country.id}
+            country={country}
+            onClick={handleCardClick}
+            isGameOver={isGameOver}
+            isLoading={isLoading}
+          />
+        ))}
+      </div>
 
       <div className='mt-4 p-4 bg-gray-50 rounded-lg'>
         <p className='text-sm text-gray-600'>
