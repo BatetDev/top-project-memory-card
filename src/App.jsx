@@ -27,7 +27,9 @@ function App() {
 
   return (
     <div>
-      <h1>Memory Card Game</h1>
+      <h1 className='text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold'>
+        Memory Card Game: Countries Edition
+      </h1>
       <p>Open the browser console (F12) to test the game logic.</p>
       <p>
         Use <code>handleCardClick('id')</code> to simulate clicks.
@@ -60,4 +62,4 @@ function App() {
   );
 }
 
-export default App; // <-- Make sure this line exists!
+export default App;
