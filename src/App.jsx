@@ -14,6 +14,8 @@ function App() {
     isLoading,
     handleCardClick,
     resetGame,
+    clickedCount,
+    totalCountries,
   } = useCardManager();
 
   // Log state to console for testing
@@ -46,7 +48,12 @@ function App() {
         Countries Memory Card Game
       </h1>
 
-      <ScoreBoard currentScore={currentScore} bestScore={bestScore} />
+      <ScoreBoard
+        currentScore={currentScore}
+        bestScore={bestScore}
+        clickedCount={clickedCount}
+        totalCountries={totalCountries}
+      />
 
       {/* Card Grid */}
       <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4'>

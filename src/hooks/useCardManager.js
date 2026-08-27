@@ -125,5 +125,7 @@ export default function useCardManager() {
     isLoading,
     handleCardClick,
     resetGame,
+    clickedCount: clickedIds.size,
+    totalCountries: masterCountries.length,
   };
 }
