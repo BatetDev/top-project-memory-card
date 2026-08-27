@@ -5,6 +5,7 @@ import ScoreBoard from './components/ScoreBoard';
 import Card from './components/Card';
 import GameOverModal from './components/GameOverModal';
 import Footer from './components/Footer';
+import { FaFlag } from 'react-icons/fa';
 
 function App() {
   const {
@@ -45,8 +46,9 @@ function App() {
 
   return (
     <div className='max-w-4xl mx-auto px-2 py-3 overflow-hidden'>
-      <h1 className='text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-2'>
-        Countries Memory Card Game
+      <h1 className='text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-4 flex items-center justify-center gap-3'>
+        <FaFlag className='text-emerald-400' />
+        <span>Countries Memory Card Game</span>
       </h1>
 
       <ScoreBoard

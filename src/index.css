@@ -2,6 +2,16 @@
 
 @import 'tailwindcss';
 
+@import '@fontsource/ubuntu/400.css';
+@import '@fontsource/ubuntu/500.css';
+@import '@fontsource/ubuntu/700.css';
+
+@layer base {
+  body {
+    font-family: 'Ubuntu', sans-serif;
+  }
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
