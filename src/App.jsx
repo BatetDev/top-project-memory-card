@@ -20,18 +20,6 @@ function App() {
     totalCountries,
   } = useCardManager();
 
-  // Log state to console for testing
-  console.log('🃏 Current Cards:', currentCards);
-  console.log('📊 Current Score:', currentScore);
-  console.log('🏆 Best Score:', bestScore);
-  console.log('💀 Game Over:', isGameOver);
-  console.log('⏳ Loading:', isLoading);
-
-  // Expose functions to window for manual testing
-  window.handleCardClick = handleCardClick;
-  window.resetGame = resetGame;
-  window.currentCards = currentCards;
-
   // Show loading state
   if (isLoading) {
     return (

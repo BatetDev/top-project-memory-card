@@ -29,7 +29,7 @@ export default function Card({ country, onClick, isGameOver, isLoading }) {
       `}
       onClick={handleClick}
     >
-      <div className='w-full aspect-[3/2] mb-0 overflow-hidden flex items-center justify-center'>
+      <div className='w-full aspect-3/2 mb-0 overflow-hidden flex items-center justify-center'>
         <img
           src={flag}
           alt={`Flag of ${name}`}
