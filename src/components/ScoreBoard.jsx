@@ -18,7 +18,7 @@ export default function ScoreBoard({
   const isComplete = clickedCount === totalCountries && totalCountries > 0;
 
   return (
-    <div className='flex justify-between items-center p-4 bg-gray-100 rounded-lg shadow-md mb-6 gap-2'>
+    <div className='flex justify-between items-center p-2 bg-gray-100 rounded-lg shadow-md mb-6 gap-2'>
       {/* Current Score */}
       <div className='text-center'>
         <p className='text-sm text-gray-600 font-medium'>Current Score</p>
