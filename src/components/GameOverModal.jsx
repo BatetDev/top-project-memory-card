@@ -25,7 +25,7 @@ export default function GameOverModal({ isOpen, finalScore, onPlayAgain }) {
         <p className='text-center text-5xl font-bold mb-6'>{finalScore}</p>
         <button
           onClick={onPlayAgain}
-          className='md:text-lg lg:text-xl w-full bg-zinc-900 hover:bg-emerald-400 hover:text-zinc-900 hover:border-zinc-800 font-bold py-3 lg:py-4 px-4 rounded-lg transition-colors lg:border-2 border-emerald-300 cursor-pointer'
+          className='md:text-lg lg:text-xl w-full bg-zinc-900 hover:bg-emerald-400 hover:text-zinc-900 hover:border-zinc-800 font-bold py-3 lg:py-4 px-4 rounded-lg transition-colors border lg:border-2 border-emerald-300 cursor-pointer'
         >
           Play Again
         </button>
