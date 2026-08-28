@@ -36,7 +36,7 @@ export default function ScoreBoard({
             🎉 You've clicked all countries!
           </p>
         ) : (
-          <p className='text-xs'>Click all without repeating to win!</p>
+          <p className='text-sm font-medium'>Click all without repeating!</p>
         )}
       </div>
 
