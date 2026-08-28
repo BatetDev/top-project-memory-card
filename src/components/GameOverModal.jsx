@@ -1,5 +1,3 @@
-// src/components/GameOverModal.jsx
-
 import { FaTrophy, FaDizzy } from 'react-icons/fa';
 
 /**

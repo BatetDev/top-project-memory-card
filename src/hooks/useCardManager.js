@@ -18,10 +18,6 @@ export default function useCardManager() {
   const [isGameOver, setIsGameOver] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
-  // --- Helper Functions ---
-  window.pickRandomCards = pickRandomCards;
-  window.masterCountries = masterCountries;
-
   /**
    * Picks a random subset of cards from the pool.
    * @param {Array} pool - The array of all available countries.
@@ -36,7 +32,6 @@ export default function useCardManager() {
       const j = Math.floor(Math.random() * (i + 1));
       [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
-    // Return the first 'count' items
     return shuffled.slice(0, count);
   }
 
@@ -45,20 +40,13 @@ export default function useCardManager() {
     async function loadCountries() {
       try {
         const countries = await fetchCountries();
-        console.log('📦 Raw countries from API:', countries);
         setMasterCountries(countries);
 
-        console.log(
-          '🎲 Calling pickRandomCards with countries count:',
-          countries.length,
-        );
         const initialCards = pickRandomCards(countries, 6);
-        console.log('🎲 Initial cards (shuffled):', initialCards);
         setCurrentCards(initialCards);
 
         setIsLoading(false);
-      } catch (error) {
-        console.error('Failed to load countries:', error);
+      } catch {
         setIsLoading(false);
       }
     }

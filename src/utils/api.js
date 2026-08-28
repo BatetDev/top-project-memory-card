@@ -1,5 +1,3 @@
-// src/utils/api.js
-
 const API_BASE_URL = 'https://api.restcountries.com/countries/v5';
 
 /**
@@ -61,7 +59,6 @@ export async function fetchCountries() {
 
     console.log(`✅ Total countries fetched: ${allCountries.length}`);
 
-    // Transform data
     return allCountries.map((country) => ({
       id: country.codes.alpha_3 || country.uuid,
       name: country.names.common,

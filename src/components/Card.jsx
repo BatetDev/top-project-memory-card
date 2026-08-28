@@ -1,14 +1,12 @@
-// src/components/Card.jsx
-
 /**
- * Card component — displays a single country card with flag and name
- * Clicking the card triggers the handleCardClick function passed from the parent
+ * Card component — displays a single country card with flag and name.
+ * Clicking the card triggers the handleCardClick function passed from the parent.
  *
  * @param {Object} props
- * @param {Object} props.country
- * @param {Function} props.onClick
- * @param {boolean} props.isGameOver
- * @param {boolean} props.isLoading
+ * @param {Object} props.country - The country object { id, name, flag }
+ * @param {Function} props.onClick - Function to call when the card is clicked
+ * @param {boolean} props.isGameOver - Whether the game is over (disables clicking)
+ * @param {boolean} props.isLoading - Whether data is still loading
  */
 export default function Card({ country, onClick, isGameOver, isLoading }) {
   const { id, name, flag } = country;

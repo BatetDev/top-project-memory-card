@@ -1,5 +1,3 @@
-// src/App.jsx
-
 import useCardManager from './hooks/useCardManager';
 import ScoreBoard from './components/ScoreBoard';
 import Card from './components/Card';

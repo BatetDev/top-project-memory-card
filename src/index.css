@@ -1,7 +1,4 @@
-/* src/index.css */
-
 @import 'tailwindcss';
-
 @import '@fontsource/ubuntu/400.css';
 @import '@fontsource/ubuntu/500.css';
 @import '@fontsource/ubuntu/700.css';
@@ -13,6 +10,7 @@
   }
 }
 
+/* Card and modal fade-in animations */
 @keyframes fadeIn {
   from {
     opacity: 0;

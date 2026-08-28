@@ -1,10 +1,8 @@
-// src/components/ScoreBoard.jsx
-
 /**
- * ScoreBoard component — displays current score and best score.
+ * ScoreBoard component — displays current score, best score, and progress.
  *
  * @param {Object} props
- * @param {number} props.currentScore
+ * @param {number} props.currentScore - The current score achieved this round
  * @param {number} props.bestScore - The best score achieved
  * @param {number} props.clickedCount - Number of unique countries clicked
  * @param {number} props.totalCountries - Total number of countries in the game
@@ -19,7 +17,6 @@ export default function ScoreBoard({
 
   return (
     <div className='flex justify-evenly items-center p-2 sm:p-3 md:p-4 lg:p-5 bg-zinc-900 border-3 border-emerald-300 rounded-lg shadow-md mb-6 md:mb-8 gap-2'>
-      {/* Current Score */}
       <div className='text-center flex flex-col gap-0.5'>
         <p className='text-sm sm:text-base md:text-lg lg:text-xl font-medium'>
           Current Score
@@ -27,7 +24,6 @@ export default function ScoreBoard({
         <p className='text-2xl lg:text-3xl font-bold'>{currentScore}</p>
       </div>
 
-      {/* Progress Indicator */}
       <div className='text-center px-4 md:px-8 sm:border-x flex flex-col gap-0.5'>
         <p className='text-sm md:text-base lg:text-lg font-medium'>
           Countries Clicked
@@ -46,7 +42,6 @@ export default function ScoreBoard({
         )}
       </div>
 
-      {/* Best Score */}
       <div className='text-center flex flex-col gap-.5'>
         <p className='text-sm sm:text-base md:text-lg lg:text-xl font-medium'>
           Best Score
