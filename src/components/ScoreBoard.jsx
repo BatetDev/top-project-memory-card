@@ -18,17 +18,17 @@ export default function ScoreBoard({
   const isComplete = clickedCount === totalCountries && totalCountries > 0;
 
   return (
-    <div className='flex justify-between items-center p-2 bg-gray-100 rounded-lg shadow-md mb-6 gap-2'>
+    <div className='flex justify-between items-center p-2 bg-zinc-900 border-3 border-emerald-300 rounded-lg shadow-md mb-6 gap-2'>
       {/* Current Score */}
       <div className='text-center'>
-        <p className='text-sm text-gray-600 font-medium'>Current Score</p>
-        <p className='text-2xl font-bold text-blue-600'>{currentScore}</p>
+        <p className='text-sm font-medium'>Current Score</p>
+        <p className='text-2xl font-bold'>{currentScore}</p>
       </div>
 
       {/* Progress Indicator */}
-      <div className='text-center px-4 sm:border-x sm:border-gray-300'>
-        <p className='text-sm text-gray-600 font-medium'>Countries Clicked</p>
-        <p className='text-xl font-bold text-purple-600'>
+      <div className='text-center px-4 sm:border-x sm:'>
+        <p className='text-sm font-medium'>Countries Clicked</p>
+        <p className='text-xl font-bold'>
           {clickedCount} / {totalCountries}
         </p>
         {isComplete ? (
@@ -36,16 +36,14 @@ export default function ScoreBoard({
             🎉 You've clicked all countries!
           </p>
         ) : (
-          <p className='text-xs text-gray-500'>
-            Click all without repeating to win!
-          </p>
+          <p className='text-xs'>Click all without repeating to win!</p>
         )}
       </div>
 
       {/* Best Score */}
       <div className='text-center'>
-        <p className='text-sm text-gray-600 font-medium'>Best Score</p>
-        <p className='text-2xl font-bold text-green-600'>{bestScore}</p>
+        <p className='text-sm font-medium'>Best Score</p>
+        <p className='text-2xl font-bold'>{bestScore}</p>
       </div>
     </div>
   );

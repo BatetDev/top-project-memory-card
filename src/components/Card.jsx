@@ -24,8 +24,8 @@ export default function Card({ country, onClick, isGameOver, isLoading }) {
   return (
     <div
       className={`
-        border-2 border-gray-300 rounded-lg p-2.5 text-center bg-white transition-all duration-200 animate-fadeIn
-        ${isDisabled ? 'opacity-70 cursor-default' : 'cursor-pointer hover:scale-105 hover:shadow-lg'}
+        border-3 border-emerald-300 rounded-lg p-2.5 text-center bg-zinc-900 transition-all duration-200 animate-fadeIn
+        ${isDisabled ? 'opacity-70 cursor-default' : 'cursor-pointer hover:scale-101 hover:shadow-lg'}
       `}
       onClick={handleClick}
     >
