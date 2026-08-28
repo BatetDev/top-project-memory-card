@@ -15,13 +15,17 @@ export default function GameOverModal({ isOpen, finalScore, onPlayAgain }) {
 
   return (
     <div className='fixed inset-0 bg-black/50 flex items-center justify-center z-50 animate-fadeInModal'>
-      <div className='bg-zinc-950 border-3 border-emerald-300 rounded-xl p-8 max-w-sm w-full mx-4 shadow-xl'>
-        <h2 className='text-3xl font-bold text-center mb-4'>Game Over!</h2>
-        <p className='md:text-lg text-center font-medium mb-2'>You scored:</p>
+      <div className='bg-zinc-950 border-3 border-emerald-300 rounded-xl p-8 lg:p-10 max-w-sm w-full mx-4 shadow-xl'>
+        <h2 className='text-3xl lg:text-4xl font-bold text-center mb-4'>
+          Game Over!
+        </h2>
+        <p className='md:text-lg lg:text-xl text-center font-medium mb-2'>
+          You scored:
+        </p>
         <p className='text-center text-5xl font-bold mb-6'>{finalScore}</p>
         <button
           onClick={onPlayAgain}
-          className='md:text-lg w-full bg-zinc-900 hover:bg-emerald-400 hover:text-zinc-900 hover:border-zinc-800 font-bold py-3 px-4 rounded-lg transition-colors border border-emerald-300 cursor-pointer'
+          className='md:text-lg lg:text-xl w-full bg-zinc-900 hover:bg-emerald-400 hover:text-zinc-900 hover:border-zinc-800 font-bold py-3 lg:py-4 px-4 rounded-lg transition-colors lg:border-2 border-emerald-300 cursor-pointer'
         >
           Play Again
         </button>

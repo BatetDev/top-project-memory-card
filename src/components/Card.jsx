@@ -24,7 +24,7 @@ export default function Card({ country, onClick, isGameOver, isLoading }) {
   return (
     <div
       className={`
-        border-3 border-emerald-300 rounded-lg p-2 sm:p-3 md:p-4 flex flex-col gap-0.5 text-center bg-zinc-900 transition-all duration-200 animate-fadeIn
+        border-3 border-emerald-300 rounded-lg md:rounded-xl p-2 sm:p-3 md:p-4 lg:p-5 flex flex-col gap-0.5 text-center bg-zinc-900 transition-all duration-200 animate-fadeIn
         ${isDisabled ? 'opacity-70 cursor-default' : 'cursor-pointer hover:scale-101 hover:shadow-lg'}
       `}
       onClick={handleClick}
@@ -33,10 +33,10 @@ export default function Card({ country, onClick, isGameOver, isLoading }) {
         <img
           src={flag}
           alt={`Flag of ${name}`}
-          className='w-full h-full object-contain rounded-md md:rounded-lg'
+          className='w-full h-full object-contain rounded-md md:rounded-lg lg:rounded-xl'
         />
       </div>
-      <p className='p-1 font-medium md:text-lg line-clamp-2 h-10 flex items-center justify-center'>
+      <p className='p-1 font-medium md:text-lg lg:text-xl line-clamp-2 h-10 flex items-center justify-center'>
         {name}
       </p>
     </div>

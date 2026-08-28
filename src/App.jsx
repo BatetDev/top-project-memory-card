@@ -26,7 +26,7 @@ function App() {
       <div className='min-h-screen bg-zinc-950 text-emerald-400 flex items-center justify-center'>
         <div className='text-center'>
           <h1 className='text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-6 flex items-center justify-center gap-3'>
-            <FaFlag className='' />
+            <FaFlag className='h-30' />
             <span>Countries Memory Card Game</span>
           </h1>
           <p className='font-medium sm:text-lg'>Loading countries...</p>
@@ -39,7 +39,7 @@ function App() {
     <div className='min-h-screen flex flex-col bg-zinc-950 text-emerald-300 md:p-4'>
       <div className='max-w-4xl mx-auto p-2 sm:p-4 w-full flex-1 flex flex-col'>
         <h1 className='text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-4 md:mb-8 flex items-center justify-center gap-3 md:gap-4'>
-          <FaFlag />
+          <FaFlag className='lg:h-12 lg:w-12' />
           <span>Countries Memory Card Game</span>
         </h1>
         <ScoreBoard
