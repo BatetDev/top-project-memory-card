@@ -3,8 +3,7 @@ import { fetchCountries } from '../utils/api';
 
 /**
  * Custom hook that manages all game logic for the Memory Card Game.
- * It handles fetching countries, shuffling cards, tracking scores,
- * and managing game state.
+ * It handles fetching countries, shuffling cards, tracking scores, and managing game state.
  *
  * @returns {Object} An object containing all game state and functions
  */
