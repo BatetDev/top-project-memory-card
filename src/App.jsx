@@ -35,7 +35,7 @@ function App() {
 
   return (
     <div className='min-h-screen flex flex-col bg-zinc-950 text-emerald-300 md:p-4'>
-      <div className='max-w-4xl mx-auto p-2 sm:p-4 w-full flex-1 flex flex-col lg:justify-evenly'>
+      <main className='max-w-4xl mx-auto p-2 sm:p-4 w-full flex-1 flex flex-col lg:justify-evenly'>
         <h1 className='text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-4 md:mb-8 flex items-center justify-center gap-3 md:gap-4'>
           <FaFlag className='lg:h-12 lg:w-12' />
           <span>Countries Memory Card Game</span>
@@ -65,7 +65,7 @@ function App() {
           onPlayAgain={resetGame}
         />
         <Footer />
-      </div>
+      </main>
     </div>
   );
 }
