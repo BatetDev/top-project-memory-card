@@ -76,11 +76,11 @@ npm run preview
 
 This project uses the REST Countries v5 API, which requires an API key:
 
-Sign up at restcountries.com to get your API key.
+1. Sign up at restcountries.com to get your API key.
 
-Create a .env file in the root directory.
+2. Create a .env file in the root directory.
 
-Add your API key:
+3. Add your API key:
 
 ```
 VITE_RESTCOUNTRIES_API_KEY=your_api_key_here
