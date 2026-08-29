@@ -32,6 +32,9 @@ export default function Card({ country, onClick, isGameOver, isLoading }) {
           src={flag}
           alt={`Flag of ${name}`}
           className='w-full h-full object-contain rounded-md md:rounded-lg lg:rounded-xl'
+          width='300'
+          height='200'
+          loading='lazy'
         />
       </div>
       <p className='p-1 font-medium md:text-lg lg:text-xl line-clamp-2 h-10 flex items-center justify-center'>
