@@ -76,7 +76,7 @@ npm run preview
 
 This project uses the REST Countries v5 API, which requires an API key:
 
-1. Sign up at restcountries.com to get your API key.
+1. Sign up at restcountries.com to get your free API key.
 
 2. Create a .env file in the root directory.
 
