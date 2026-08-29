@@ -8,7 +8,7 @@ A memory card game built with React where players test their memory by clicking 
 
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-[Live Demo](https://top-project-memory-card-chi.vercel.app/) - [View Code](https://github.com/BatetDev/top-project-memory-card-game)
+[Live Demo](https://top-project-memory-card-chi.vercel.app/) - [View Code](https://github.com/BatetDev/top-project-memory-card)
 
 </div>
 
