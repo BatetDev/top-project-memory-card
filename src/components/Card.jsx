@@ -33,8 +33,6 @@ export default function Card({ country, onClick, isGameOver, isLoading }) {
             src={flag}
             alt={`Flag of ${name}`}
             className='w-full h-full object-contain rounded-md md:rounded-lg lg:rounded-xl'
-            width='300'
-            height='200'
             fetchpriority='high'
           />
         </div>
