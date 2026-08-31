@@ -103,7 +103,7 @@ export default function useCardManager() {
     setCurrentCards(freshCards);
   }
 
-  // --- Return everything components need ---
+  // --- Return ---
   return {
     currentCards,
     currentScore,
