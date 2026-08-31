@@ -102,10 +102,7 @@ _Note:_ The VITE\_ prefix is required for Vite to expose the variable to the cli
 
 ## 📜 Credits
 
-- **Original project by**: The Odin Project
-
-- **Country data**: REST Countries API
-
-- **Icons**: React Icons
-
-- **Font:** Ubuntu
+- **Original project by**: [The Odin Project](https://www.theodinproject.com/lessons/node-path-react-new-memory-card)
+- **Country data**: [REST Countries API](https://restcountries.com/)
+- **Icons**: [React Icons](https://react-icons.github.io/react-icons/)
+- **Font**: [Ubuntu](https://fonts.google.com/specimen/Ubuntu)
