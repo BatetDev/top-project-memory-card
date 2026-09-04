@@ -18,12 +18,9 @@ A memory card game where players have to click on country flags without repeatin
 
 The application emphasizes core React fundamentals:
 
-- Custom hooks (`useCardManager`) for game logic
-- State management with `useState`
-- Side effects with `useEffect`
+- Custom hooks for game logic
+- State management with `useState` and `useEffect`
 - Component composition and reusability
-- Lifting state and passing props
-- Conditional rendering and list rendering
 - API integration with fetch and environment variables
 
 Built as part of The Odin Project's React curriculum.
