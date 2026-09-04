@@ -33,8 +33,7 @@ Built as part of The Odin Project's React curriculum.
 ✅ Current score and best score tracking  
 ✅ Progress indicator showing countries clicked / total  
 ✅ Victory state when all countries are clicked without repeating  
-✅ Game Over state with duplicate detection  
-✅ Mobile-first responsive layout
+✅ Game Over state with duplicate detection
 
 ## 🛠️ Built With
 
